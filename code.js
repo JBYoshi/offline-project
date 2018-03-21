@@ -299,6 +299,10 @@ window.addEventListener('load', checking(function () {
         }
     }
 
+    if (window.location.protocol === 'file:' || window.location.host === 'localhost') {
+        document.getElementById('download').style.display = 'none'
+    }
+
     let aboutDiv = document.getElementById('about')
     let overlayDiv = document.getElementById('in-game-overlay')
     let bankruptDiv = document.getElementById('bankrupt')
