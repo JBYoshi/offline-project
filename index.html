@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Offline - The Digital Divide</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="code.js"></script>
+  </head>
+  <body>
+    <div id='about'>
+      <h1>OFFLINE - The Digital Divide</h1>
+      <p>
+        In this game, you play the role of a benevolent Internet service provider in the fictional country of Bitland.
+        You must attempt to connect as many of its inhabitants to the Internet as possible while taking into account budget restrictions.
+      </p>
+      <p>
+        Each circle represents a town, or part of a city.
+        A green circle represents an area that is connected to the Internet. A gray circle represents an area that is not connected.
+        To connect one area of Bitland to another area, click and drag to draw a line from an area connected to the Internet to an area that is not connected.
+      </p>
+      <p>
+        You have a limited amount of money available for you to use in expanding your reach.
+        When expanding, you pay a fee based on the distance between the areas you connect.
+        An additional, fixed fee is also imposed to pay for infrastructure.
+        You can then gain some money back for connecting new areas, indicated by the number on the area.
+        However, not all areas cannot afford to pay for the new infrastructure, so you may also lose money for connecting them.
+        If you run out of money, the game is over.
+      </p>
+      <p>
+        While money is a factor, your goal is not to maximize profits, but to expand Internet access to as many areas as possible.
+        Be aware, however, that expanding to all areas is often impossible.
+      </p>
+      <p>
+        <input type='button' class='start' value='Start' />
+      </p>
+      <p class='license'>Copyright © 2018 Jonathan Browne (JBYoshi).</p>
+    </div>
+    <canvas id='c1'>Your browser is not supported. Make sure you're using the latest version.</canvas>
+    <canvas id='c2'></canvas>
+    <div id='in-game-overlay'>
+      <input type='button' class='start' value='Restart' />
+      <input type='button' class='quit' value='Quit' />
+    </div>
+    <div id='bankrupt'>
+      <h1>You went bankrupt!</h1>
+      <h3>You connected <span class='score-end'></span>% of Bitland's computers to the Internet, until you ran out of money in the process.</h3>
+      <p>In real life, you wouldn't even make it this far. As soon as you started losing money, you would have lost all your support.</p>
+      <input type='button' class='start' value='New Game' />
+      <input type='button' class='quit' value='Exit' />
+    </div>
+    <div id='no-moves'>
+      <h1>Out of moves!</h1>
+      <h3>You connected <span class='score-end'></span>% of Bitland's computers to the Internet, but you don't have enough money to expand anymore.</h3>
+      <p>In real life, you wouldn't even make it this far. As soon as you started losing money, you would have lost all your support.</p>
+      <input type='button' class='start' value='New Game' />
+      <input type='button' class='quit' value='Exit' />
+    </div>
+    <div id='win'>
+      <h1>You won!</h1>
+      <h3>You connected all of Bitland's computers to the Internet!</h3>
+      <p>In real life, unfortunately, you wouldn't make it this far. As soon as you started losing money, you would have lost all your support.</p>
+      <input type='button' class='start' value='New Game' />
+      <input type='button' class='quit' value='Exit' />
+    </div>
+  </body>
+</html>
