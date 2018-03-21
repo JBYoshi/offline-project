@@ -6,7 +6,7 @@ Since this is a school project, I will not be accepting contributions for now.
 
 ## Play
 
-[Play Online] - TODO add link
+[Play Online](https://jbyoshi.github.io/offline-project/)
 
 ### Play Offline
 
