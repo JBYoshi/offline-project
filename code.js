@@ -7,7 +7,7 @@ function checking(callback) {
         try {
             return callback.apply(this, arguments);
         } catch (e) {
-            document.body.innerHTML = 'Something went wrong. Report this and include the information below:<br>'
+            document.body.innerHTML = 'Something went wrong. Report this and include the information below. You can <a href="https://github.com/JBYoshi/offline-project/issues">post it as a GitHub issue</a> or contact me otherwise.<br>'
             var textarea = document.createElement('textarea')
             textarea.readOnly = true
             textarea.rows = 20
