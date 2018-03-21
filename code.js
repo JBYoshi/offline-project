@@ -235,7 +235,7 @@ function repaint() {
             ctx.textBaseline = 'middle'
             ctx.fillText('' + comp.profit, browserX(comp.point), browserY(comp.point), textSize)
         }
-        ctx.fillStyle = board.money <= 0 ? 'red' : 'black'
+        ctx.fillStyle = board.money <= 0 ? 'red' : 'white'
         ctx.textAlign = 'right'
         ctx.textBaseline = 'top'
         let scoreText
