@@ -2,6 +2,8 @@
 
 A school project to demonstrate how the digital divide came about.
 
+![Screenshot](https://github.com/JBYoshi/offline-project/raw/master/screenshot.png)
+
 Since this is a school project, I will not be accepting contributions for now.
 
 ## Play
