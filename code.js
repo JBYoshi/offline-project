@@ -102,7 +102,7 @@ function Board() {
                 if (y <= 0 || y >= this.height) continue
                 if ((x == cityX && y == cityY || Math.random() < cityDensity) && !this.computersByPosition[x][y]) {
                     let cost = Math.random() * 10
-                    if (cost > 5) cost = Math.random() * 10
+                    if (cost > 6) cost = Math.random() * 10
                     this.computersByPosition[x][y] = new Computer({x: x, y: y}, Math.floor(cost))
                     computersInCity.push(this.computersByPosition[x][y])
                 }
