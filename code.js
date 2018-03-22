@@ -7,24 +7,17 @@ function checking(callback) {
         try {
             return callback.apply(this, arguments);
         } catch (e) {
-            document.body.innerHTML = 'Something went wrong. Report this and include the information below. You can <a href="https://github.com/JBYoshi/offline-project/issues">post it as a GitHub issue</a> or contact me otherwise.<br>'
-            var textarea = document.createElement('textarea')
-            textarea.readOnly = true
-            textarea.rows = 20
-            textarea.cols = 60
+            var text;
             if (e.stack) {
                 if (e.stack.startsWith && e.stack.startsWith('' + e)) {
-                    textarea.value = e.stack
+                    text = e.stack;
                 } else {
-                    textarea.value = e + '\n' + e.stack
+                    text = textarea.value = e + '\n' + e.stack;
                 }
-            }
-            if (navigator && navigator.userAgent) {
-                textarea.value += '\n\nBrowser info (user agent): ' + navigator.userAgent
             } else {
-                textarea.value += '\n\nCould not obtain user agent'
+                text = e + '';
             }
-            document.body.appendChild(textarea)
+            setError(text);
             window.theError = e
             console.log('Error thrown, stored as window.theError')
             throw e;
@@ -424,4 +417,7 @@ window.addEventListener('load', checking(function () {
         clearButtons[x].addEventListener('click', checking(clear))
     }
     clear()
+    document.getElementById('loading').style.display = 'none'
 }))
+
+window.scriptReady = true

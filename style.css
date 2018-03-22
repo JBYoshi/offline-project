@@ -19,7 +19,7 @@ canvas, div, div>* {
     max-width: 80em;
     overflow-y: auto;
 }
-div:not(#about) {
+div:not(#loading) {
     display: none;
 }
 div#in-game-overlay {

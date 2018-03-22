@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <title>Offline - The Digital Divide</title>
     <link rel="stylesheet" href="style.css" />
+    <script>
+      function setError(text) {
+        document.body.innerHTML = 'Something went wrong. Report this and include the information below. You can <a href="https://github.com/JBYoshi/offline-project/issues">post it as a GitHub issue</a> or contact me otherwise.<br>';
+        try {
+          var textarea = document.createElement('textarea');
+          textarea.readOnly = true;
+          textarea.rows = 20;
+          textarea.cols = 60;
+          textarea.value = text;
+          if (navigator && navigator.userAgent) {
+            textarea.value += '\n\nBrowser info (user agent): ' + navigator.userAgent;
+          } else {
+            textarea.value += '\n\nCould not obtain user agent';
+          }
+          document.body.appendChild(textarea);
+        } catch (e1) {
+          document.body.innerHTML += '<textarea readonly width=30 height=10>Error handling code crashed</textarea>';
+          throw e1;
+        }
+      }
+    </script>
     <script src="code.js"></script>
+    <script>
+      if (!window.scriptReady) {
+        window.onload = function() {
+          setError('Error: Script failed to load');
+        }
+      }
+    </script>
   </head>
   <body>
+    <div id='loading'>
+      <p style='text-align: left;'>
+        <noscript>
+          You need to <a href="https://www.enable-javascript.com/" target="_blank">enable JavaScript</a> for this game to work.
+        </noscript>
+      </p>
+    </div>
     <div id='about'>
       <h1>OFFLINE - The Digital Divide</h1>
       <p>
@@ -38,7 +73,7 @@
       </p>
       <p class='license'>Copyright © 2018 Jonathan Browne (JBYoshi). <a href="https://github.com/JBYoshi/offline-project">View on GitHub</a></p>
     </div>
-    <canvas id='c1'>Your browser is not supported. Make sure you're using the latest version.</canvas>
+    <canvas id='c1'>Your browser is not supported. Make sure you're using the latest version. (For your safety, only check for updates through your browser's settings.)</canvas>
     <canvas id='c2'></canvas>
     <div id='in-game-overlay'>
       <input type='button' class='start' value='Restart' />
